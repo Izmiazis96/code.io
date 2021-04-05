@@ -1,0 +1,784 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content code styling*/
+section{
+	padding: 100px 0;
+}
+.max-width {
+	max-width: 1300px;
+	padding: 0 80px;
+	margin: auto;
+}
+/* styling font pada tiap section */
+.about, .services, .skills, .contact, footer{
+	font-family: 'Poppins',sans-serif;
+}
+/* design untuk display flex buat beberapa bagian col-md-3 */
+.about .about-content, 
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+section .title{
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 500;
+	margin-bottom: 60px;
+	padding-bottom: 20px;
+	font-family: 'Ubuntu',sans-serif;
+}
+section .title::before{
+	content: "";
+	position: absolute;
+	width: 180px;
+	bottom: 0px;	
+	left: 50%;
+	width: 180px;
+	height: 3px;
+	background: #111;
+	transform: translateX(-50%);
+
+}
+section .title::after{
+	position: absolute;
+	bottom: -12px;	
+	left: 50%;
+	font-size: 20px;
+	color: red;
+	padding:5px;
+	background: #fff;
+	transform: translateX(-50%);
+}
+
+
+/*Navbar Styling*/
+
+.navbar {
+	position: fixed;
+	padding: 30px 0;
+	width: 100%;
+	z-index: 999;
+	font-family: 'Ubuntu', sans-serif;
+	transition: all 0.3s ease;
+}
+
+.navbar.sticky{
+	padding: 15px 0;
+	background: red;
+}
+
+.navbar .max-width {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar .logo a {
+	color: #fff;
+	font-size: 35px;
+	font-weight: 600;
+}
+
+.navbar .logo a span{
+	color: red;
+}
+
+.navbar.sticky .logo a span{
+	color: #fff;
+	transition: color 0.3s ease;
+}
+
+.navbar .menu li {
+	list-style: none;
+	display: inline-block;
+}
+.navbar .menu li a {
+	display: block;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	margin-left: 25px;
+	transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+	color: red;
+}
+
+.navbar.sticky .menu li a:hover{
+	color: #fff;
+}
+
+
+/*Navbar btn Styling*/
+.menu-btn {
+	color: #fff;
+	font-size: 23px;
+	cursor: pointer;
+	display: none;
+}
+
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: red;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+/* Home section Pertama*/
+.home {
+	display: flex;
+	background: url("images/ismi.jpg") no-repeat center;
+	height: 100vh;
+	color: #fff;
+	min-height: 500px;
+	font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width {
+	margin: auto 0 auto 0;
+}
+
+.home .home-content .text-1 {
+	font-size: 27px;
+}
+
+.home .home-content .text-2 {
+	font-size: 75px;
+	font-weight: 600;
+	margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+	font-size: 40px;
+	margin: 5px 0;
+}
+.home .home-content a {
+	display: inline-block;
+	background: red;
+	color: #fff;
+	padding: 12px 36px;
+	font-size: 25px;
+	margin-top: 20px;
+	border-radius: 6px;
+	border: 2px solid red;
+	transition: all 0.3s ease;
+}
+
+.home .home-content a:hover{
+	color: #fff;
+	background: none;
+}
+.home .home-content .text-3 span{
+	color: red;
+	font-weight:500;
+}
+/* tutup section home pertama */
+
+
+/*-- SECTION ABOUT STYLING-- */
+
+.about .title::after{
+	content: "Who I am";
+}
+
+/* design bagian sebelah kiri */
+.about .about-content .left{
+	width: 45%;
+}
+/* ukuran gambar  */
+.about .about-content .left img{
+	height: 400px;
+	width: 400px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+/* design bagian sebelah kanan */
+.about .about-content .right{
+	width: 55%;
+}
+
+/* styling text pada judul */
+.about .about-content .right .text{
+	font-size: 25px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+/* styling warna pada text judul */
+.about .about-content .right .text span{
+	color: red;
+}
+/*styling format ukiran text*/
+.about .about-content .right p{
+	text-align: : justify;
+}
+/* styling link about */
+.about .about-content .right a{
+	display: inline-block;
+	background: red;
+	color: #fff;
+	padding: 10px 30px;
+	font-weight: 500;
+	font-size: 20px;
+	margin-top: 20px;
+	border-radius: 6px;
+	border: 2px solid red;
+	transition: all 0.3s ease;
+}
+/* styling link ketika kursor diarahkan */
+.about .about-content .right a:hover{
+	color: red;
+	background: none;
+}
+/* tutup section about */
+
+
+/*-- SECTION SERVICES STYLING --*/
+
+/* section design warna latar belakang dan warna style */
+.services,  .teams{
+	background: #111;
+	color: #fff;
+}
+.services .title::before,
+.teams .title::before{
+	background: #fff;
+}
+/* background warna pada tulisan yg terkait */
+.services .title::after,
+.teams .title::after{
+	background: #111;
+	content: "What i provide";
+}
+/* styling design my serices */
+.services .serv-content .card{
+	width: calc(33% - 20px);
+	background: #222;
+	text-align: center;
+	border-radius: 6px;
+	padding: 20px 25px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+/*background akan berubah ketika arahkan */
+.services .serv-content .card:hover{
+	background: red;
+}
+.services .serv-content .card .box{
+	transition: all 0.3s ease;
+}
+/* gerakan style ketika arahkan di kotak */
+.services .serv-content .card:hover .box{
+	transform: scale(1.05);
+}
+/*font awesome my service*/
+.services .serv-content .card i{
+	font-size: 50px;
+	color: red;
+	transition: color 0.3s ease;
+}
+/* styling warna pada font awesome ketika cursor di arahkan */
+.services .serv-content .card:hover i{
+	color: #fff;
+}
+/* deskripsi text pada service */
+.services .serv-content .card .text{
+	font-size:25px;
+	font-weight: 500;
+	margin: 10px 0 7px 0;
+}
+/* -- TUTUP SECTION SERVICES -- */
+
+
+/* --SECTION SKILL STYLING-- */
+
+/* styling garis tepi dengan warna hitam */
+.skills .title::before{
+	background: #111;
+}
+.skills .title::after{
+	content:"what i know";
+}
+/* styling membagi ukuraan colom*/
+.skills .skills-content .column{
+	width: calc(50% - 30px);
+}
+/* stylng judul text*/
+.skills .skills-content .left .text{
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+/* styling margin botton untuk masing2 html,css dan lain2*/
+.skills .skills-content .right .bars{
+	margin-bottom: 15px;
+}
+.skills .skills-content .right .info{
+	display: flex;
+	margin-bottom: 5px;
+	align-items: center;
+	justify-content: space-between;
+}
+/*styling size tulisan */
+.skills .skills-content .right span{
+	font-weight:500;
+	font-size:18px;
+}
+/*stylng line panjang persen*/
+.skills .skills-content .right .line{
+	height: 5px;
+	width: 100%;
+	background: lightgrey;
+	position: relative;
+}
+/*styling line panjang skill persen*/
+.skills .skills-content .right .line::before{
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 80%;
+	left: 0;
+	top: 0;
+	background: red;
+}
+/* styling skill */
+.skills .skills-content .right .html::before{
+	width: 90%;
+}
+.skills .skills-content .right .css::before{
+	width: 80%;
+}
+.skills .skills-content .right .github::before{
+	width: 70%;
+}
+.skills .skills-content .right .php::before{
+	width: 70%;
+}
+/*styling posisi tulisan deskripsi*/
+.skills .skills-content .left p{
+	text-align: justify;
+}
+/*styling tombol readme*/
+.skills .skills-content .left a{
+	display: inline-block;
+	background: red;
+	color: #fff;
+	padding: 8px 16px;
+	font-weight: 500;
+	font-size: 18px;
+	margin-top: 20px;
+	border-radius: 6px;
+	border: 2px solid red;
+	transition: all 0.3s ease;
+}
+/*stylng ketika tombol diarahkan*/
+.skills .skills-content .left a:hover{
+	color: red;
+	background: none;
+}
+/* tutup styling skills */
+
+
+/*-- section TEAM styling --*/
+.teams .title::after{
+	content: "who with me";
+}
+/*background kotak untuk carousel, buat text ke tengah*/
+.teams .carousel .card{
+	background: #222;
+	border-radius: 6px;
+	padding: 25px 35px;
+	text-align: center;
+}
+/*mouse diarahkan ke carousel*/
+.teams .carousel .card:hover{
+	background: red;
+}
+/*meratakan posisi pada masing2 display*/
+.teams .carousel .card .box{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box{
+	transform: scale(1.05);
+}
+/* nama pada team*/
+.teams .carousel .card .text{
+	font-size: 25px;
+	font-weight: 500;
+	margin: 10px 0 7px 0;
+}
+/*ukuran foto pada team*/
+.teams .carousel .card img{
+	height: 150px;
+	width: 150px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 5px solid red;
+}
+/* border photo berubah putih ketika mouse diarahkan*/
+.teams .carousel .card:hover img{
+	border-color: #fff;
+}
+/*buat tombol gerak dengan javascript menjadi ke tengah*/
+.owl-dots{
+	text-align: center;
+	margin-top: 20px;
+}
+/*ukuran tombol gerak*/
+.owl-dot{
+	height: 13px;
+	width: 13px;
+	margin: 0 5px;
+	outline: none;
+	border-radius: 50%;
+	border: 2px solid red!important;
+	transition: all 0.3s ease;
+}
+/*ukuran ketika tombol aktiv*/
+.owl-dot.active{
+	width: 35px;
+	border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+	background: red!important;
+}
+/* tutup team */
+
+/* --contact section styling-- */
+.contact .title::after{
+	content: "get in touch";
+}
+/* membagi ukran colom halaman kontak*/
+.contact .contact-content .column{
+	width: calc(50% - 30px);
+}
+/*size judul contak*/
+.contact .contact-content .text{
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+/*posisi deskripsi dengan justify*/
+.contact .contact-content .left p{
+	text-align: justify;
+}
+/*posisi margin icon*/
+.contact .contact-content .left .icons{
+	margin: 10px 0;
+}
+/* membagi ukuran yang pas contact bagian kiri antara icon dengan nama*/
+.contact .contact-content .row{
+	display: flex;
+	height: 65px;
+	align-items: center;
+}
+
+.contact .contact-content .row .info{
+	margin-left: 30px;
+}
+/*ukuran font awesome*/
+.contact .contact-content .row i{
+	font-size: 25px;
+	color: red;
+}
+/*ketebalan pada nama judul*/
+.contact .contact-content .info .head{
+	font-weight: 500;
+} 
+/*warna isi*/
+.contact .contact-content .info .sub-title{
+	color: #333;
+}
+
+/*membagi ukuran pada setiap form*/
+.contact .right form .fields{
+	display: flex;
+}
+/*ukuran kotak pada form input*/
+.contact .right form .field,
+.contact .right form .fields .field{
+	height: 45px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+/*ukuran kotak pada form input area*/
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+/*jarak form input name dan email*/
+.contact .right form .name{
+	margin-right: 10px;
+}
+.contact .right form .email{
+	margin-left: 10px;
+}
+
+/*design form input*/
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+	height: 100%;
+	width: 100%;
+	border: 1px solid lightgrey;
+	outline: none;
+	border-radius: 6px;
+	padding: 0 15px;
+	font-size: 17px;
+	font-family: 'Poppins', sans-serif;	
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+	border-color: #b3b3b3;
+}
+.contacr .right form .textarea textarea{
+	padding-top: 10px;
+	resize: none;
+}
+.contact .right form .button{
+	height: 47px;
+	width: 170px;
+}
+/*design tombol button*/
+.contact .right form .button button{
+	width: 100%;
+	height: 100%;
+	border: 2px solid red;
+	background: red;
+	color: #fff;
+	outline: none;
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+/*ketika tombil button diarahkan*/
+.contact .right form .button button:hover{
+	color: red;
+	background: none;
+}
+/*tutup section contact*/
+
+/*-- section footer -- */
+footer{
+	background: #111;
+	padding: 15px 23px;
+	color: #fff;
+	text-align: center;
+}
+footer span a{
+	color: red;
+	text-decoration: none;
+}
+footer span a:hover{
+	text-decoration: underline;
+}
+/* tutup section footer*/
+
+/* responsive media query */
+@media (max-width: 1300px){
+	.home .max-width{
+		margin-left: 0px;
+	}
+}
+@media (max-width: 1104px){
+	.about .about-content .left img{
+		height: 350px;
+		width: 350px;
+	}
+}
+
+@media (max-width: 992px){
+	.max-width {
+		padding: 0 50px;
+	}
+}
+@media (max-width: 947px){
+	.menu-btn{
+		display: block;
+		z-index: 999;
+	}
+	.menu-btn i.active:before{
+		content: "\f00d";
+	}
+	.navbar .menu {
+		position: fixed;
+		height: 100vh;
+		width: 100%;
+		left: -100%;
+		top: 0;
+		background: #111;
+		text-align: center;
+		padding-top: 80px;
+		transition: all 0.3s ease;
+	}
+	.navbar .menu.active{
+		left: 0;
+	}
+	.navbar .menu li{
+		display: block;
+	}
+	.navbar .menu li a{
+		display: inline-block;
+		margin: 20px 0;
+		font-size: 25px; 
+	}
+
+	.home .home-content .text-2 {
+		font-size: 70px;
+	}
+
+	.home .home-content .text-3 {
+		font-size: 35px;
+	}
+	.home .home-content a {
+		font-size: 23px;
+		padding: 10px 30px;	
+	}
+	.max-width{
+		max-width: 930px;
+	}
+	.about .about-content .column{
+		width: 100%;
+	}
+	.about .about-content .left{
+		display: flex;
+		justify-content: center;
+		margin: 0 auto 60px;
+	}
+	.about .about-content .right{
+		flex: 100%;
+	}
+	.services .serv-content .card{
+		width: calc(50% - 10px);
+		margin-bottom: 20px;
+	}
+	.skills .skills-content .column,
+	.contact .contact-content .column{
+		width: 100%;
+		margin-bottom: 35px;
+	}
+}
+
+@media (max-width: 690px){
+	.max-width{
+		padding: 0 23px;
+	}
+	.home .home-content .text-2 {
+		font-size: 60px;
+	}
+
+	.home .home-content .text-3 {
+		font-size: 32px;
+	}
+	.home .home-content a {
+		font-size: 20px;
+	}
+/*	.about .about-content .column{
+		width: 50%;
+	}*/
+	.services .serv-content .card,
+	.skills .skills-content .column, footer{
+		width: 100%;
+	}
+
+}
+
+@media (max-width: 500px){
+	
+	.home .home-content .text-2 {
+		font-size: 20px;
+	}
+
+	.home .home-content .text-3 {
+		font-size: 27px;
+	}
+/*	.home .home-content a {
+		font-size: 15px;
+		padding: 8px 20px;	
+	}*/
+	.about .about-content .right .text,
+	.skills .skills-content .left .text{
+        font-size: 19px;
+    }
+/*	.about .about-content .column{
+		width: 50%;
+	}*/
+
+/*	.services .serv-content .card{
+		width: 100%;
+	}*/
+	.contact .right form .fields{
+		flex-direction: column;
+	}
+	.contact .right form .name,
+	.contact .right form .email{
+		margin: 0;
+	}
+	.scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+
+}
+
+
+
